@@ -16,7 +16,7 @@ const Banner = () => {
         </button>
       </div>
 
-      <div className="container mx-auto grid  grid-cols-4 gap-5 text-center my-8">
+      <div className="container mx-auto grid  grid-cols-4 gap-5 text-center py-8 border-b border-b-gray-300">
         <div className=" shadow-sm rounded-2xl py-12 bg-white">
           <p className="text-2xl font-bold pb-2 text-green-800">10</p>
           <p className="text-gray-500">Total Friend</p>
