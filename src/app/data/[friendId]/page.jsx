@@ -1,6 +1,9 @@
 import React from 'react';
 import friends from '@/friendsData/friends.json';
 import Image from 'next/image';
+import { LuPhoneCall } from 'react-icons/lu';
+import { BsChatRightTextFill } from 'react-icons/bs';
+import { FaVideo } from 'react-icons/fa';
 
 const FriendInfo = async ({ params }) => {
   const today = new Date();
@@ -77,10 +80,28 @@ const FriendInfo = async ({ params }) => {
               <span className="text-black font-bold">30 days</span>
             </p>
           </div>
-          <div>
-            <h4>Quick Check-In</h4>
-            <div>
-              
+          <div className="mt-8 bg-white p-6 rounded-xl shadow-sm">
+            <h4 className='pb-4 text-xl font-semibold text-green-900'>Quick Check-In</h4>
+
+            <div className="flex gap-5">
+              <div className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1">
+                <p className="text-3xl font-bolder flex justify-center">
+                  <LuPhoneCall />
+                </p>
+                <p className="font-semibold">Call</p>
+              </div>
+              <div className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1">
+                <p className="text-3xl font-bolder flex justify-center">
+                  <BsChatRightTextFill />
+                </p>
+                <p className="font-semibold">Call</p>
+              </div>
+              <div className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1">
+                <p className="text-3xl font-bolder flex justify-center">
+                  <FaVideo />
+                </p>
+                <p className="font-semibold">Call</p>
+              </div>
             </div>
           </div>
         </div>
