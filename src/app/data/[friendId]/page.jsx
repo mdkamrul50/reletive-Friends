@@ -3,6 +3,7 @@ import friends from '@/friendsData/friends.json';
 import Image from 'next/image';
 
 const FriendInfo = async ({ params }) => {
+  const today = new Date();
   const { friendId } = await params;
   const friend = friends.find((friendIn) => friendIn.id == friendId);
   console.log("this is friend" ,friend);
@@ -40,7 +41,7 @@ const FriendInfo = async ({ params }) => {
         <div>
           <div className="flex gap-6">
             <div className="shadow-sm rounded-xl bg-white text-center p-10 space-y-2">
-              <span className="text-3xl font-bold text-green-800">
+              <span className="text-3xl font-bold text-green-900">
                 {friend.days_since_contact}
               </span>
               <p className="text-xl font-semibold text-gray-400">
@@ -48,18 +49,38 @@ const FriendInfo = async ({ params }) => {
               </p>
             </div>
             <div className="shadow-sm rounded-xl bg-white text-center p-10 space-y-2">
-              <span className="text-3xl font-bold text-green-800">
+              <span className="text-3xl font-bold text-green-900">
                 {friend.goal}
               </span>
               <p className="text-xl font-semibold text-gray-400">Goal (Days)</p>
             </div>
             <div className="shadow-sm rounded-xl bg-white text-center p-10 space-y-3 ">
-              <span className="text-3xl font-bold text-green-800">
-                Feb 27, 2026
+              <span className="text-3xl font-bold text-green-900">
+                {today.toLocaleDateString('en-US', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })}
               </span>
-              <p className="text-xl font-semibold text-gray-400">
-                Days Since Contact
-              </p>
+              <p className="text-xl font-semibold text-gray-400">Next Due</p>
+            </div>
+          </div>
+          <div className="mt-6 bg-white p-5 rounded-xl">
+            <div className="flex justify-between">
+              <h4 className="text-2xl font-semibold text-green-950">
+                Relationship Goal
+              </h4>
+              <button className="btn">Edit</button>
+            </div>
+            <p className="font-semibold text-gray-500 text-xl">
+              Connect every{' '}
+              <span className="text-black font-bold">30 days</span>
+            </p>
+          </div>
+          <div>
+            <h4>Quick Check-In</h4>
+            <div>
+              
             </div>
           </div>
         </div>
