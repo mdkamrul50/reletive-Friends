@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { LuPhoneCall } from 'react-icons/lu';
 import { BsChatRightTextFill } from 'react-icons/bs';
 import { FaVideo } from 'react-icons/fa';
+import { GoBellFill } from 'react-icons/go';
+import { FaBoxArchive } from 'react-icons/fa6';
+import { MdDelete } from 'react-icons/md';
 
 const FriendInfo = async ({ params }) => {
   const today = new Date();
@@ -11,33 +14,46 @@ const FriendInfo = async ({ params }) => {
   const friend = friends.find((friendIn) => friendIn.id == friendId);
   console.log("this is friend" ,friend);
   return (
-    <div className="bg-gray-100 py-20">
-      <div className="container mx-auto flex gap-10">
-        <div className="py-7 px-22 bg-white shadow-sm flex justify-center items-center text-center rounded-xl ">
-          <div className="space-y-2">
-            <div className="flex justify-center">
-              <Image
-                className="rounded-full"
-                src={friend.picture}
-                height={120}
-                width={120}
-                alt="img"
-              />
-            </div>
-            <h2 className="text-xl font-bold ">{friend.name}</h2>
-
-            <div className="flex flex-col justify-center items-center gap-3">
-              <div className="badge badge-soft badge-success rounded-full pb-1 font-semibold">
-                {friend.tags[1]}
+    <div className="bg-gray-100 py-20 ">
+      <div className="container mx-auto flex gap-10 justify-center">
+        <div>
+          <div className="py-7 px-22 bg-white shadow-sm flex justify-center items-center text-center rounded-xl ">
+            <div className="space-y-2">
+              <div className="flex justify-center">
+                <Image
+                  className="rounded-full"
+                  src={friend.picture}
+                  height={120}
+                  width={120}
+                  alt="img"
+                />
               </div>
-              <p
-                className={`badge  rounded-full text-white pb-1 ${friend.status === 'overdue' ? 'badge-error' : 'badge-warning'} ${friend.status === 'on-track' && 'bg-green-800'}`}
-              >
-                {friend.status}
+              <h2 className="text-xl font-bold ">{friend.name}</h2>
+
+              <div className="flex flex-col justify-center items-center gap-3">
+                <div className="badge badge-soft badge-success rounded-full pb-1 font-semibold">
+                  {friend.tags[1]}
+                </div>
+                <p
+                  className={`badge  rounded-full text-white pb-1 ${friend.status === 'overdue' ? 'badge-error' : 'badge-warning'} ${friend.status === 'on-track' && 'bg-green-800'}`}
+                >
+                  {friend.status}
+                </p>
+              </div>
+              <p className="text-xl italic font-semibold text-gray-400">
+                "{friend.tags[0]}, {friend.tags[1]}"
               </p>
             </div>
-            <p className="text-xl italic font-semibold text-gray-400">
-              "{friend.tags[0]}, {friend.tags[1]}"
+          </div>
+          <div className="mt-4 space-y-2">
+            <p className="flex items-center p-6 bg-white text-center justify-center rounded-xl font-bold text-gray-600 shadow-sm btn">
+              <GoBellFill /> Snooze 2 weeks
+            </p>
+            <p className="flex items-center p-6 bg-white text-center justify-center rounded-xl font-bold text-gray-600 shadow-sm btn">
+              <FaBoxArchive /> Archive
+            </p>
+            <p className="flex items-center p-6 bg-white text-center justify-center rounded-xl font-bold text-xl  text-red-400 shadow-sm btn">
+              <MdDelete /> Delete
             </p>
           </div>
         </div>
@@ -81,7 +97,9 @@ const FriendInfo = async ({ params }) => {
             </p>
           </div>
           <div className="mt-8 bg-white p-6 rounded-xl shadow-sm">
-            <h4 className='pb-4 text-xl font-semibold text-green-900'>Quick Check-In</h4>
+            <h4 className="pb-4 text-xl font-semibold text-green-900">
+              Quick Check-In
+            </h4>
 
             <div className="flex gap-5">
               <div className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1">
