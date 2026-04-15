@@ -7,6 +7,7 @@ import { FaVideo } from 'react-icons/fa';
 import { GoBellFill } from 'react-icons/go';
 import { FaBoxArchive } from 'react-icons/fa6';
 import { MdDelete } from 'react-icons/md';
+import ContactBtnToggle from '@/component/contactdetail/ContactBtnToggle';
 
 const FriendInfo = async ({ params }) => {
   const today = new Date();
@@ -43,16 +44,19 @@ const FriendInfo = async ({ params }) => {
               <p className="text-xl italic font-semibold text-gray-400">
                 "{friend.tags[0]}, {friend.tags[1]}"
               </p>
+              <span className="font-semibold text-gray-500">
+                Preferred: {friend.email}
+              </span>
             </div>
           </div>
           <div className="mt-4 space-y-2">
-            <p className="flex items-center p-6 bg-white text-center justify-center rounded-xl font-bold text-gray-600 shadow-sm btn">
+            <p className="flex items-center p-4 bg-white text-center justify-center rounded-xl font-bold text-gray-600 shadow-sm btn">
               <GoBellFill /> Snooze 2 weeks
             </p>
-            <p className="flex items-center p-6 bg-white text-center justify-center rounded-xl font-bold text-gray-600 shadow-sm btn">
+            <p className="flex items-center p-4 bg-white text-center justify-center rounded-xl font-bold text-gray-600 shadow-sm btn">
               <FaBoxArchive /> Archive
             </p>
-            <p className="flex items-center p-6 bg-white text-center justify-center rounded-xl font-bold text-xl  text-red-400 shadow-sm btn">
+            <p className="flex items-center p-4 bg-white text-center justify-center rounded-xl font-bold text-xl  text-red-400 shadow-sm btn">
               <MdDelete /> Delete
             </p>
           </div>
@@ -93,7 +97,7 @@ const FriendInfo = async ({ params }) => {
             </div>
             <p className="font-semibold text-gray-500 text-xl">
               Connect every{' '}
-              <span className="text-black font-bold">30 days</span>
+              <span className="text-black font-bold">{friend.goal} days</span>
             </p>
           </div>
           <div className="mt-8 bg-white p-6 rounded-xl shadow-sm">
@@ -101,26 +105,7 @@ const FriendInfo = async ({ params }) => {
               Quick Check-In
             </h4>
 
-            <div className="flex gap-5">
-              <div className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1">
-                <p className="text-3xl font-bolder flex justify-center">
-                  <LuPhoneCall />
-                </p>
-                <p className="font-semibold">Call</p>
-              </div>
-              <div className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1">
-                <p className="text-3xl font-bolder flex justify-center">
-                  <BsChatRightTextFill />
-                </p>
-                <p className="font-semibold">Call</p>
-              </div>
-              <div className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1">
-                <p className="text-3xl font-bolder flex justify-center">
-                  <FaVideo />
-                </p>
-                <p className="font-semibold">Call</p>
-              </div>
-            </div>
+            <ContactBtnToggle friend={friend} />
           </div>
         </div>
       </div>
