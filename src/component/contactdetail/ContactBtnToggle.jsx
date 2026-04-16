@@ -10,20 +10,19 @@ const ContactBtnToggle = ({ friend }) => {
   const { contactDetail, setContactDetail } = useContext(contactContext);
   // console.log(contactDetail, 'sumthing');
 
-  const [callBtn, srtCallBtn] = useState('call')
 
 
-  const handelContact = () => {
-    console.log('contact added');
-    setContactDetail([...contactDetail, friend]);
-    srtCallBtn()
-    console.log(callBtn);
+
+  const handelContact = (type) => {
+
+    setContactDetail([...contactDetail, {...friend, type}]);
+   
+    
   };
   return (
     <div className="flex gap-5">
       <div
-        onClick={handelContact}
-        
+        onClick={() => handelContact('call')}
         className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1"
       >
         <p className="text-3xl font-bolder flex justify-center">
@@ -32,7 +31,7 @@ const ContactBtnToggle = ({ friend }) => {
         <p className="font-semibold">Call</p>
       </div>
       <div
-        onClick={handelContact}
+        onClick={() => handelContact('text')}
         className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1"
       >
         <p className="text-3xl font-bolder flex justify-center">
@@ -41,7 +40,7 @@ const ContactBtnToggle = ({ friend }) => {
         <p className="font-semibold">Text</p>
       </div>
       <div
-        onClick={handelContact}
+        onClick={() => handelContact('video')}
         className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1"
       >
         <p className="text-3xl font-bolder flex justify-center">
