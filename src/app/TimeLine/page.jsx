@@ -1,13 +1,21 @@
 'use client';
 
 import { contactContext } from '@/context/Cotact.context';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BsChatText, BsFillCameraVideoFill } from 'react-icons/bs';
 import { IoCall } from 'react-icons/io5';
 
 const TimeLine = () => {
   const today = new Date();
   const { contactDetail, setContactDetail } = useContext(contactContext);
+  const [filterType, setFilterType] = useState("all")
+
+  let filterData = contactDetail;
+
+
+  if (filterType !== 'all') {
+    filterData = contactDetail.filter((item) => item.type === filterType);
+  }
 
   return (
     <>
@@ -15,7 +23,39 @@ const TimeLine = () => {
         <h2 className="text-4xl container mx-auto pt-12 font-bold pb-3">
           Timeline
         </h2>
-        {contactDetail.map((Info, ind) => {
+        <div className="pl-46 pb-4">
+          <div className="filter">
+            <input
+              className="btn filter-reset bg-gray-300 border-b border-b-blue-900"
+              type="radio"
+              name="metaframeworks"
+              aria-label="All"
+              onChange={() => setFilterType('all')}
+            />
+            <input
+              className="btn border-b border-b-blue-900 "
+              type="radio"
+              name="metaframeworks"
+              aria-label="Call"
+              onChange={() => setFilterType('call')}
+            />
+            <input
+              className="btn border-b border-b-blue-900 "
+              type="radio"
+              name="metaframeworks"
+              aria-label="Text"
+              onChange={() => setFilterType('text')}
+            />
+            <input
+              className="btn border-b border-b-blue-900 px-6"
+              type="radio"
+              name="metaframeworks"
+              aria-label="Video"
+              onChange={() => setFilterType('video')}
+            />
+          </div>
+        </div>
+        {filterData.map((Info, ind) => {
           return (
             <div key={ind} className=" container mx-auto py-4">
               <div className="flex gap-3 items-center p-4 bg-white rounded-xl shadow-sm">
