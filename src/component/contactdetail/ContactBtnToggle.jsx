@@ -5,19 +5,14 @@ import React, { useContext, useState } from 'react';
 import { BsChatRightTextFill } from 'react-icons/bs';
 import { FaVideo } from 'react-icons/fa';
 import { LuPhoneCall } from 'react-icons/lu';
+import { toast } from 'react-toastify';
 
 const ContactBtnToggle = ({ friend }) => {
   const { contactDetail, setContactDetail } = useContext(contactContext);
-  // console.log(contactDetail, 'sumthing');
-
-
-
 
   const handelContact = (type) => {
-
-    setContactDetail([...contactDetail, {...friend, type}]);
-   
-    
+    setContactDetail([...contactDetail, { ...friend, type }]);
+    toast.success(`${type}, from ${friend.name}`);
   };
   return (
     <div className="flex gap-5">
