@@ -1,12 +1,10 @@
-"use client"
+'use client';
 
-import ContactInfoProvider from '@/context/cotact.context'
-import React from 'react'
+import ContactInfoProvider from '@/context/Cotact.context';
+import React from 'react';
 
-const Providers = ({children}) => {
-  return <ContactInfoProvider>
-    {children}
-    </ContactInfoProvider>;
-}
+const Providers = ({ children }) => {
+  return <ContactInfoProvider>{children}</ContactInfoProvider>;
+};
 
-export default Providers
+export default Providers;

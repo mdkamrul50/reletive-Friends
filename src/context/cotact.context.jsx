@@ -7,9 +7,10 @@ const ContactInfoProvider = ({children}) => {
     contactDetail,
     setContactDetail,
   };
-  return <contactInfoProvider.Provider value={data}>
-    {children}
-  </contactInfoProvider.Provider>
+
+  return (
+    <contactContext.Provider value={data}>{children}</contactContext.Provider>
+  );
 }
 
 export default ContactInfoProvider;

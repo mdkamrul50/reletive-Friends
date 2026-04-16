@@ -1,24 +1,29 @@
-"use client"
+'use client';
 
-import contactInfoProvider from '@/context/cotact.context';
-import React, { useContext } from 'react'
+import contactInfoProvider, { contactContext } from '@/context/Cotact.context';
+import React, { useContext, useState } from 'react';
 import { BsChatRightTextFill } from 'react-icons/bs';
 import { FaVideo } from 'react-icons/fa';
 import { LuPhoneCall } from 'react-icons/lu';
 
-const ContactBtnToggle = ({friend}) => {
+const ContactBtnToggle = ({ friend }) => {
+  const { contactDetail, setContactDetail } = useContext(contactContext);
+  // console.log(contactDetail, 'sumthing');
 
-   const { contactDetail, setContactDetail } = useContext(contactInfoProvider);
-   console.log(contactDetail,  'sumthing');
+  const [callBtn, srtCallBtn] = useState('call')
 
-  const handelContact = ()=>{
+
+  const handelContact = () => {
     console.log('contact added');
     setContactDetail([...contactDetail, friend]);
-  }
+    srtCallBtn()
+    console.log(callBtn);
+  };
   return (
     <div className="flex gap-5">
       <div
         onClick={handelContact}
+        
         className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1"
       >
         <p className="text-3xl font-bolder flex justify-center">
@@ -46,6 +51,6 @@ const ContactBtnToggle = ({friend}) => {
       </div>
     </div>
   );
-}
+};
 
-export default ContactBtnToggle
+export default ContactBtnToggle;
