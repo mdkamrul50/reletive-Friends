@@ -9,6 +9,10 @@ import { FaBoxArchive } from 'react-icons/fa6';
 import { MdDelete } from 'react-icons/md';
 import ContactBtnToggle from '@/component/contactdetail/ContactBtnToggle';
 
+export const metadata = {
+  title: 'Friend Information',
+};
+
 const FriendInfo = async ({ params }) => {
   const today = new Date();
   const { friendId } = await params;

@@ -1,8 +1,14 @@
 import React from 'react';
 import friends from '@/friendsData/friends.json';
 import FriendData from '../FriendData/page';
+export const metadata = {
+  title: 'HomePage',
+};
 
 const YourFriends = () => {
+
+
+
   return (
     <div className="bg-gray-100 pt-8 pb-12">
       <h2 className='text-2xl font-semibold pb-4 container mx-auto'>Your Friends</h2>

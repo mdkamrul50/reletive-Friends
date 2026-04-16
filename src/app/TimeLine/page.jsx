@@ -5,7 +5,10 @@ import React, { useContext, useState } from 'react';
 import { BsChatText, BsFillCameraVideoFill } from 'react-icons/bs';
 import { IoCall } from 'react-icons/io5';
 
+
+
 const TimeLine = () => {
+  
   const today = new Date();
   const { contactDetail, setContactDetail } = useContext(contactContext);
   const [filterType, setFilterType] = useState("all")
