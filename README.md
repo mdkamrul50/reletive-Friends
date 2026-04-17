@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Close Friends – Real-Time Contact Tracker
 
-## Getting Started
+🔗 **Live Demo:** https://close-friends-rho.vercel.app/
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📌 Project Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Close Friends** is a modern web application built with **Next.js** that helps users track and manage their interactions with friends in real time.
+It allows users to record different types of communication such as **Call, Text, and Video**, and visualize interaction data through a clean analytics dashboard.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The goal of this project is to simulate a **real-time contact tracking system** with a smooth UI and dynamic data updates.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+### 📞 Real-Time Interaction Tracking
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Track interactions with friends:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  * 📱 Call
+  * 💬 Text
+  * 🎥 Video
+* Data updates instantly using **Context API**
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📊 Analytics Dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Visual representation of interaction data using charts
+* Shows:
+
+  * Total number of Calls, Texts, and Videos
+* Built with **Recharts** for clean and interactive graphs
+
+---
+
+### 🧑‍🤝‍🧑 Friend Timeline
+
+* Displays all interactions in a timeline format
+* Shows:
+
+  * Type of interaction (Call/Text/Video)
+  * Friend name
+  * Date of interaction
+
+---
+
+### ⏳ Last Contact Tracking
+
+* Displays **how many days ago** you last contacted a friend
+* Updates dynamically in real time
+
+---
+
+### 🎛️ Filtering System
+
+* Filter timeline by:
+
+  * All
+  * Call
+  * Text
+  * Video
+
+---
+
+### 🔔 Notifications
+
+* Integrated with **React Toastify**
+* Provides instant feedback for user actions
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology                 | Usage                      |
+| -------------------------- | -------------------------- |
+| **Next.js**                | Full-stack React framework |
+| **React**                  | UI building                |
+| **Context API**            | Global state management    |
+| **Recharts**               | Data visualization         |
+| **DaisyUI + Tailwind CSS** | UI styling                 |
+| **React Toastify**         | Notifications              |
+
+---
+
+
+
+## ⭐ Final Thoughts
+
+This project demonstrates how to build a **real-time interactive dashboard** using modern frontend technologies. It combines clean UI, dynamic data handling, and practical features that reflect real-world applications.
+
+---
+
+💡 *If you like this project, feel free to star it and share your feedback!*
