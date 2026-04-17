@@ -27,6 +27,7 @@ const TimeLine = () => {
           Timeline
         </h2>
         <div className="md:pl-46 pl-0 pb-4">
+          <h4 className='font-semibold text-gray-500 '>Filter Timeline:</h4>
           <div className="filter pl-2 md:pl-0">
             <input
               className="btn filter-reset bg-gray-300 border-b border-b-blue-900"
