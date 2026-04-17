@@ -23,11 +23,11 @@ const TimeLine = () => {
   return (
     <>
       <div className="bg-gray-100">
-        <h2 className="text-4xl container mx-auto pt-12 font-bold pb-3">
+        <h2 className="text-4xl container mx-auto pt-12 font-bold pb-3 px-3 md:px-0">
           Timeline
         </h2>
-        <div className="pl-46 pb-4">
-          <div className="filter">
+        <div className="md:pl-46 pl-0 pb-4">
+          <div className="filter pl-2 md:pl-0">
             <input
               className="btn filter-reset bg-gray-300 border-b border-b-blue-900"
               type="radio"
@@ -60,7 +60,7 @@ const TimeLine = () => {
         </div>
         {filterData.map((Info, ind) => {
           return (
-            <div key={ind} className=" container mx-auto py-4">
+            <div key={ind} className=" container mx-auto py-4 px-2 md:px-0">
               <div className="flex gap-3 items-center p-4 bg-white rounded-xl shadow-sm">
                 <p className="text-4xl text-gray-800 pr-2">
                   {(Info.type === 'call' && <IoCall />) ||

@@ -15,7 +15,7 @@ const ContactBtnToggle = ({ friend }) => {
     toast.success(`${type}, from ${friend.name}`);
   };
   return (
-    <div className="flex gap-5">
+    <div className="flex flex-col md:flex-row gap-5 px-4 md:px-0">
       <div
         onClick={() => handelContact('call')}
         className="rounded-xl shadow-sm p-5 bg-gray-100 text-center space-y-2 flex-1"

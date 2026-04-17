@@ -19,8 +19,8 @@ const FriendInfo = async ({ params }) => {
   const friend = friends.find((friendIn) => friendIn.id == friendId);
   console.log("this is friend" ,friend);
   return (
-    <div className="bg-gray-100 py-20 ">
-      <div className="container mx-auto flex gap-10 justify-center">
+    <div className="bg-gray-100 py-20 px-4 md:px-0">
+      <div className="container mx-auto flex flex-col md:flex-row gap-10 justify-center">
         <div>
           <div className="py-7 px-22 bg-white shadow-sm flex justify-center items-center text-center rounded-xl ">
             <div className="space-y-2">
@@ -66,7 +66,7 @@ const FriendInfo = async ({ params }) => {
           </div>
         </div>
         <div>
-          <div className="flex gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3  gap-6">
             <div className="shadow-sm rounded-xl bg-white text-center p-10 space-y-2">
               <span className="text-3xl font-bold text-green-900">
                 {friend.days_since_contact}
@@ -94,7 +94,7 @@ const FriendInfo = async ({ params }) => {
           </div>
           <div className="mt-6 bg-white p-5 rounded-xl">
             <div className="flex justify-between">
-              <h4 className="text-2xl font-semibold text-green-950">
+              <h4 className="md:text-2xl text-xl font-semibold text-green-950">
                 Relationship Goal
               </h4>
               <button className="btn">Edit</button>

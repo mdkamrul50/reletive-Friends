@@ -5,8 +5,8 @@ import { SiX } from 'react-icons/si';
 const Footer = () => {
   return (
     <div className="bg-[#245b49]">
-      <div className="text-center pt-20 pb-11 space-y-4 border-b border-b-gray-500 container mx-auto">
-        <h3 className="text-7xl font-bold text-white">KeenKeeper</h3>
+      <div className="text-center pt-20 pb-11 space-y-4 border-b border-b-gray-500 container mx-auto px-3 md:px-0">
+        <h3 className="md:text-7xl text-4xl font-bold text-white">KeenKeeper</h3>
         <p className="text-gray-300">
           Your personal shelf of meaningful connections. Browse, tend, and
           nurture the relationships that matter most.
@@ -28,9 +28,9 @@ const Footer = () => {
         <div className="text-gray-400">
           © 2026 KeenKeeper. All rights reserved.
         </div>
-        <div className=" flex gap-10">
+        <div className=" flex md:gap-10 gap-3 px-2 md:px-0">
           <p className="text-gray-400">Privacy Policy</p>
-          <p className="text-gray-400"> Terms of Service</p>
+          <p className="text-gray-400 hidden md:block"> Terms of Service</p>
           <p className="text-gray-400">Cookies</p>
         </div>
       </div>

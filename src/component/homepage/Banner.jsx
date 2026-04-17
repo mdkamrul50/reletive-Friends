@@ -3,8 +3,8 @@ import React from 'react'
 const Banner = () => {
   return (
     <div className="bg-gray-100">
-      <div className="container mx-auto text-center pt-20 ">
-        <h2 className="text-5xl font-bold pb-5">
+      <div className="container mx-auto text-center pt-20 px-3 md:px-0">
+        <h2 className="md:text-5xl text-3xl font-bold pb-5">
           Friends to keep close in your life
         </h2>
         <p className="text-gray-500 pb-5">
@@ -16,7 +16,7 @@ const Banner = () => {
         </button>
       </div>
 
-      <div className="container mx-auto grid  grid-cols-4 gap-5 text-center py-8 border-b border-b-gray-300">
+      <div className="container mx-auto grid  lg:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-5 px-4 space-y-2 md:space-y-0 md:px-0 text-center py-8 border-b border-b-gray-300">
         <div className=" shadow-sm rounded-2xl py-12 bg-white">
           <p className="text-2xl font-bold pb-2 text-green-800">10</p>
           <p className="text-gray-500">Total Friend</p>
@@ -34,9 +34,7 @@ const Banner = () => {
           <p className="text-gray-500">Interactions This Month</p>
         </div>
       </div>
-      
     </div>
-    
   );
 }
 
